@@ -31,7 +31,7 @@ steps:
   inputs:
     command: 'custom'
     workingDir: '$(Build.Repository.LocalPath)' #replace with the package.json folder
-    customCommand: 'run build validate $(Build.Repository.LocalPath)/ADF/azure-poc-adf-v2-01 /subscriptions/7cbe6514-3c10-4942-8509-d5f4b2c390c0/resourceGroups/azure-poc-rg-01/providers/Microsoft.DataFactory/factories/azure-poc-adf-v2-01'
+    customCommand: 'run build validate $(Build.Repository.LocalPath)/ADF /subscriptions/7cbe6514-3c10-4942-8509-d5f4b2c390c0/resourceGroups/azure-poc-rg-01/providers/Microsoft.DataFactory/factories/azure-poc-adf-v2-01'
   displayName: 'Validate'
 
 # Validate and then generate the ARM template into the destination folder, which is the same as selecting "Publish" from the UX.
@@ -41,7 +41,7 @@ steps:
   inputs:
     command: 'custom'
     workingDir: '$(Build.Repository.LocalPath)' #replace with the package.json folder
-    customCommand: 'run build export $(Build.Repository.LocalPath)/ADF/wa-cip-wus-bss-adfv2-01 /subscriptions/a486ec76-63fc-4eff-989b-f46990a42a2e/resourceGroups/wa-cip-dev-wus-bss-rg-01/providers/Microsoft.DataFactory/factories/wa-cip-dev-wus-bss-adfv2-01 "ArmTemplate"'
+    customCommand: 'run build export $(Build.Repository.LocalPath)/ADF /subscriptions/7cbe6514-3c10-4942-8509-d5f4b2c390c0/resourceGroups/azure-poc-rg-01/providers/Microsoft.DataFactory/factories/azure-poc-adf-v2-01 "ArmTemplate"'
   displayName: 'Validate and Generate ARM template'
 
 # Publish the artifact to be used as a source for a release pipeline.
@@ -54,4 +54,4 @@ steps:
 
 - task: PublishBuildArtifacts@1
   inputs:
-     artifactName: BirchStreetSystemsDW.$(Build.BuildNumber)
+     artifactName: DataPlatformADF.$(Build.BuildNumber)

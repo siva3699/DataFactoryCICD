@@ -65,12 +65,15 @@
 				"typeProperties": {
 					"recurrence": {
 						"frequency": "Day",
-						"interval": 15,
-						"startTime": "2022-04-14T01:40:00Z",
+						"interval": 1,
+						"startTime": "2022-04-14T03:37:00Z",
 						"timeZone": "UTC",
 						"schedule": {
+							"minutes": [
+								30
+							],
 							"hours": [
-								1
+								0
 							]
 						}
 					}
